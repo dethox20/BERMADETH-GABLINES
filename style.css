@@ -1,0 +1,213 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Irish Grover', cursive;
+  background: url('bers.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: cyan;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: repeat(12, 1fr);
+  height: 100vh;
+  width: 100%;
+}
+
+
+.header {
+  grid-column: 1 / 13;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 5px solid #090909;
+  padding: 0 40px;
+  position: relative;
+}
+
+.header h1 {
+  grid-column: 1 / 7;
+  font-size: 36px;
+  color: cyan;
+  text-shadow: 2px 2px 8px #000;
+  letter-spacing: 2px;
+}
+
+.navbar {
+  grid-column: 8 / 13;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: end;
+  gap: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 20px;
+  color: cyan;
+  text-align: center;
+  padding: 10px 25px;
+  border: 2px solid cyan;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: black;
+  background: cyan;
+  border-color: white;
+  box-shadow: 0 0 15px cyan;
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 36px;
+  color: cyan;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s ease;
+  position: absolute;
+  right: 40px;
+  top: 30px;
+}
+
+.menu-toggle.open {
+  transform: rotate(90deg);
+}
+
+
+.main {
+  grid-column: 1 / 13;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 40px;
+  align-items: center;
+  padding: 40px;
+}
+
+.left-side {
+  grid-column: 3 / 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 4px solid cyan;
+  box-shadow: 0 0 20px cyan;
+}
+
+
+.right-side {
+  grid-column: 7 / 11;
+  text-align: center;
+}
+
+.intro {
+  font-size: 26px;
+  font-style: italic;
+}
+
+.name {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.course {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: block;
+    right: 20px;
+    top: 25px;
+  }
+
+  .navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    grid-column: 1 / 13;
+    grid-template-columns: 1fr;
+    background: rgba(0, 0, 0, 0.95);
+    border-top: 2px solid cyan;
+    padding: 25px 0;
+    z-index: 100;
+  }
+
+  .navbar.active {
+    display: grid;
+    animation: slideDown 0.3s ease-in-out;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .left-side {
+    grid-column: 1 / 13;
+  }
+
+  .right-side {
+    grid-column: 1 / 13;
+    position: relative;
+    top: -30px;
+  }
+
+  .profile {
+    width: 300px;
+    height: 300px;
+  }
+
+  .intro {
+    font-size: 22px;
+  }
+
+  .name {
+    font-size: 28px;
+  }
+
+  .course {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .profile {
+    width: 400px;
+    height: 400px;
+  }
+
+  .intro {
+    font-size: 24px;
+  }
+
+  .name {
+    font-size: 40px;
+  }
+
+  .course {
+    font-size: 30px;
+  }
+}
