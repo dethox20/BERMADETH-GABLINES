@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>ABOUT ME</h1>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <div class="navbar" id="navbar">
+        <a href="index.html">HOME</a>
+        <a href="about.html" class="active">ABOUT</a>
+        <a href="contact.html">CONTACT US</a>
+      </div>
+    </div>
+
+   
+    <div class="content">
+   
+      <div class="profile-section">
+        <img src="MYIMAGE.png" alt="Bernadeth B. Gablines" class="profile-img">
+        <div class="profile-text">
+          <h2>Who Am I?</h2>
+          <p>Hello! I’m <strong>Bernadeth B. Gablines</strong>, an Information Technology student who is passionate about web development, design, and innovation. I enjoy learning new technologies and creating meaningful digital experiences.</p>
+
+          <h2>Skills</h2>
+          <ul class="skills">
+            <li>HTML, CSS</li>
+            <li>PHP & MySQL</li>
+          </ul>
+
+          <h2>Hobbies</h2>
+          <ul class="hobbies">
+            <li>Gaming</li>
+            <li>Listening to Music</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
